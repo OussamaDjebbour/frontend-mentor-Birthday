@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Age calculator app</title>
+    <link rel="stylesheet" href="index.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Jomhuria&family=Poppins:ital,wght@0,700;1,400;1,800&family=Work+Sans:wght@100;300;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <!-- <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style> -->
+  </head>
+  <body>
+    <!-- Day DD Month MM Year YYYY -- years -- months -- days -->
+    <!-- <input placeholder="Enter some text" name="name" />
+    <p id="values"></p> -->
+    <div class="container">
+      <form class="sub" submit="onSubmit">
+        <div class="parent">
+          <label>DAY</label>
+          <input type="text" placeholder="DD" id="day" name="fname" />
+          <div class="hidden dayErr">Must be a valid day</div>
+        </div>
+        <div class="parent">
+          <label>MONTH</label>
+          <input type="text" placeholder="MM" id="month" name="lname" />
+          <div class="hidden monthErr">Must be a valid month</div>
+        </div>
+        <div class="parent">
+          <label>YEAR</label>
+          <input type="text" placeholder="YYYY" id="year" name="hi" />
+          <div class="hidden yearErr">Must be in the past</div>
+        </div>
+        <!-- <button> -->
+        <img class="arrow" src="assets/images/icon-arrow.svg" alt="" />
+        <!-- </button> -->
+      </form>
+      <div class="affichage"><span class="yearDisp">- - </span>years</div>
+      <div class="affichage"><span class="monthDisp">- - </span>months</div>
+      <div class="affichage"><span class="dayDisp">- - </span>days</div>
+    </div>
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+    <script src="index.js"></script>
+  </body>
+</html>
