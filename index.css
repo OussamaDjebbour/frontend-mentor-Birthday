@@ -87,3 +87,36 @@ form input {
   transform: skewX(-20px);
   margin-right: 20px;
 }
+
+/* min-width: 375px */
+@media (min-width: 500px) and (max-width: 1000px) {
+  .container {
+    width: 500px;
+    padding: 36px 30px;
+  }
+  form {
+    padding-bottom: 80px;
+  }
+  form input {
+    /* padding: 20px; */
+    max-width: 130px;
+    /* font-size: 32px;
+    font-weight: 800;
+    color: hsl(0, 0%, 8%);
+    border: solid 1px hsl(0, 0%, 86%);
+    border-radius: 10px;
+    outline: none; */
+  }
+  .arrow {
+    /* background-color: hsl(259, 100%, 65%);
+    border-radius: 50%;
+    padding: 20px;
+    position: absolute; */
+    bottom: -42px;
+    right: 177px;
+  }
+  .empty {
+    /* font-size: 20px; */
+    text-align: center;
+  }
+}

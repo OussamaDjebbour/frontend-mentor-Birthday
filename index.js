@@ -39,13 +39,17 @@ const calcAge = function () {
   //       (1000 * 60 * 60 * 24 * 365)
   //   )
   // );
+
   inputsFields.forEach((inp) => {
-    if (inp.value === "") {
+    const emptyDiv = inp.closest(".parent").querySelector(".empty");
+
+    if (inp.value === "" && !emptyDiv) {
       const targetParent = inp.closest(".parent");
       inp.style.borderColor = "hsl(0, 100%, 67%)";
       const newDiv = document.createElement("div");
       const newContent = document.createTextNode("This field is required");
       newDiv.style.color = "hsl(0, 100%, 67%)";
+      newDiv.classList.add("empty");
       newDiv.appendChild(newContent);
 
       targetParent.appendChild(newDiv);
