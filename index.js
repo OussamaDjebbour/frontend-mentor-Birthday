@@ -30,30 +30,13 @@ const calcAge = function () {
 
   const d =
     (datee.getTime() - new Date(years, months, days)) / (1000 * 60 * 60 * 24);
-  // console.log("jjjjjjj", days, months, years, d);
-  // console.log("days", Math.trunc((d % 365) % 30));
-  // console.log(
-  //   "years",
-  //   Math.trunc(
-  //     (datee.getTime() - new Date(years, months, days)) /
-  //       (1000 * 60 * 60 * 24 * 365)
-  //   )
-  // );
 
   inputsFields.forEach((inp) => {
     const emptyDiv = inp.closest(".parent").querySelector(".empty");
+    const emptyFieldErr = inp.closest(".parent").querySelector(".emptyField");
 
     if (inp.value === "" && !emptyDiv) {
-      const targetParent = inp.closest(".parent");
-      inp.style.borderColor = "hsl(0, 100%, 67%)";
-      const newDiv = document.createElement("div");
-      const newContent = document.createTextNode("This field is required");
-      newDiv.style.color = "hsl(0, 100%, 67%)";
-      newDiv.classList.add("empty");
-      newDiv.appendChild(newContent);
-
-      targetParent.appendChild(newDiv);
-      targetParent.querySelector("label").style.color = "hsl(0, 100%, 67%)";
+      errorDisplay(emptyFieldErr);
     }
   });
 
@@ -106,7 +89,11 @@ const calcAge = function () {
   }
 };
 
-btnArrow.addEventListener("click", function (e) {
-  e.preventDefault();
-  calcAge();
-});
+const validation = function () {
+  btnArrow.addEventListener("click", function (e) {
+    e.preventDefault();
+    calcAge();
+  });
+};
+
+validation();

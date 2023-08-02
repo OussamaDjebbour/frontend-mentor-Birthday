@@ -98,25 +98,47 @@ form input {
     padding-bottom: 80px;
   }
   form input {
-    /* padding: 20px; */
     max-width: 130px;
-    /* font-size: 32px;
-    font-weight: 800;
-    color: hsl(0, 0%, 8%);
-    border: solid 1px hsl(0, 0%, 86%);
-    border-radius: 10px;
-    outline: none; */
   }
   .arrow {
-    /* background-color: hsl(259, 100%, 65%);
-    border-radius: 50%;
-    padding: 20px;
-    position: absolute; */
     bottom: -42px;
     right: 177px;
   }
   .empty {
     /* font-size: 20px; */
     text-align: center;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+    padding: 36px 30px;
+    min-height: 100%;
+  }
+  form input {
+    width: 100%;
+    font-size: 24px;
+    padding: 20px 5px;
+  }
+  .arrow {
+    margin-top: 20px;
+    bottom: -42px;
+    left: 50%;
+  }
+  .empty {
+    /* font-size: 20px; */
+    text-align: center;
+  }
+  form {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    padding-bottom: 80px;
+    /* border-bottom: solid 1px hsl(0, 0%, 86%);
+    position: relative;
+    margin-bottom: 40px; */
+  }
+  .affichage {
+    font-size: 50px;
   }
 }
