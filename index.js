@@ -7,7 +7,8 @@ const monthDisplay = document.querySelector(".monthDisp");
 const yearDisplay = document.querySelector(".yearDisp");
 const inputsFields = document.querySelectorAll("input");
 
-const errorDisplay = function (errDisplay) {
+const errorDisplay = function (errDisplay, errContent) {
+  errDisplay.textContent = errContent;
   errDisplay.classList.remove("hidden");
   errDisplay.style.color = "hsl(0, 100%, 67%)";
   errDisplay.closest(".parent").querySelector("label").style.color =
@@ -33,15 +34,15 @@ const calcAge = function () {
 
   inputsFields.forEach((inp) => {
     const emptyDiv = inp.closest(".parent").querySelector(".empty");
-    const emptyFieldErr = inp.closest(".parent").querySelector(".emptyField");
+    const emptyFieldErr = inp.closest(".parent").querySelector(".divEmptyy");
 
     if (inp.value === "" && !emptyDiv) {
-      errorDisplay(emptyFieldErr);
+      errorDisplay(emptyFieldErr, "This field is required");
     }
   });
 
   if (Number(monthInput.value) === 2 && Number(dayInput.value) > 28) {
-    errorDisplay(dayErrorDisplay);
+    errorDisplay(dayErrorDisplay, "Must be a valid day");
     return;
   }
 
@@ -52,7 +53,7 @@ const calcAge = function () {
       Number(monthInput.value) === 11) &&
     Number(dayInput.value) > 30
   ) {
-    errorDisplay(dayErrorDisplay);
+    errorDisplay(dayErrorDisplay, "Must be a valid day");
     return;
   }
 
@@ -60,17 +61,17 @@ const calcAge = function () {
     (dayInput.value.length > 0 && Number(dayInput.value < 1)) ||
     Number(dayInput.value) > 31
   ) {
-    errorDisplay(dayErrorDisplay);
+    errorDisplay(dayErrorDisplay, "Must be a valid day");
   }
 
   if (
     monthInput.value.length > 0 &&
     (Number(monthInput.value) < 1 || Number(monthInput.value) > 12)
   ) {
-    errorDisplay(monthErrorDisplay);
+    errorDisplay(monthErrorDisplay, "Must be a valid month");
   }
   if (Number(yearInput.value > datee.getFullYear())) {
-    errorDisplay(yearErrorDisplay);
+    errorDisplay(yearErrorDisplay, "Must be in the past");
   }
 
   if (
